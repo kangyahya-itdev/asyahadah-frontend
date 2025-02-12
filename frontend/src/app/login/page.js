@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     if (username === "administrator" && password === "administrator") {
       setError("");
-      router.push("/dashboard");
+      router.push("/adminpanel/dashboard");
     } else {
       setError("Invalid username or password");
     }

@@ -24,16 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="h-screen flex flex-col">
-          {/* Navbar di atas */}
-          <Navbar />
-
-          {/* Kontainer utama (Sidebar + Konten) */}
-          <div className="flex flex-1 pt-16"> {/* Tambahkan padding atas agar tidak tertutup navbar */}
-            <Sidebar />
-            <main className="flex-1 p-6 bg-gray-100 overflow-auto">{children}</main>
-          </div>
-        </div>
+        <main>{children}</main>
       </body>
     </html>
   );

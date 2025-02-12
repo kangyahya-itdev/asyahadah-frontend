@@ -10,11 +10,11 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   const menuItems = [
-    { name: "Dashboard", path: "/dashboard", icon: <FaTachometerAlt /> },
-    { name: "Produk", path: "/products", icon: <FaBox /> },
-    { name: "Komisi", path: "/commissions", icon: <FaMoneyBill /> },
-    { name: "Pesanan", path: "/orders", icon: <FaShoppingCart /> },
-    { name: "Topups", path: "/topups", icon: <FaWallet /> },
+    { name: "Dashboard", path: "/adminpanel", icon: <FaTachometerAlt /> },
+    { name: "Produk", path: "/adminpanel/products", icon: <FaBox /> },
+    { name: "Komisi", path: "/adminpanel/commissions", icon: <FaMoneyBill /> },
+    { name: "Pesanan", path: "/adminpanel/orders", icon: <FaShoppingCart /> },
+    { name: "Topups", path: "/adminpanel/topups", icon: <FaWallet /> },
   ];
 
   return (
@@ -56,7 +56,7 @@ const Sidebar = () => {
             <button
               onClick={() => setIsUsersOpen(!isUsersOpen)}
               className={`flex items-center justify-between w-full gap-2 p-2 rounded ${
-                pathname.startsWith("/users") ? "bg-green-700 font-bold" : "hover:bg-green-700"
+                pathname.startsWith("/adminpanel/users") ? "bg-green-700 font-bold" : "hover:bg-green-700"
               }`}
             >
               <div className="flex items-center gap-2">
@@ -83,7 +83,7 @@ const Sidebar = () => {
               <ul className="ml-6 mt-2">
                 <li className="mb-2">
                   <Link
-                    href="/users/administrator"
+                    href="/adminpanel/users/administrator"
                     className={`flex items-center gap-2 p-2 rounded ${
                       pathname === "/users/administrator" ? "bg-green-700 font-bold" : "hover:bg-green-700"
                     }`}
@@ -94,9 +94,9 @@ const Sidebar = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    href="/users/user"
+                    href="/adminpanel/users/user"
                     className={`flex items-center gap-2 p-2 rounded ${
-                      pathname === "/users/user" ? "bg-green-700 font-bold" : "hover:bg-green-700"
+                      pathname === "/adminpanel/users/user" ? "bg-green-700 font-bold" : "hover:bg-green-700"
                     }`}
                   >
                     <FaUser />
@@ -108,7 +108,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-            href='/laporan'
+            href='/adminpanel/laporan'
             className="flex items-center gap-2 p-2 hover:bg-green-700 rounded"
             >
               <FaFileAlt />
@@ -118,7 +118,7 @@ const Sidebar = () => {
           {/* Logout */}
           <li>
             <Link
-              href="/settings"
+              href="/adminpanel/logout"
               className="flex items-center gap-2 p-2 hover:bg-green-700 rounded"
             >
               <FaSignOutAlt />
